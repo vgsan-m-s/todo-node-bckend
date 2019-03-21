@@ -61,7 +61,7 @@ class Controller {
         let todo: any = todos.filter(ele => ele.id == id)[0];
         if (todo) {
             data.id = todo.id;
-            todos[todos.indexOf(todo)] = data;
+            todos[todos.indexOf(todo)].status = data.status;
             response.send(true);
         }
         response.send(false);
