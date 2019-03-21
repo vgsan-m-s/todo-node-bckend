@@ -1,0 +1,30 @@
+npm init
+npm install -D typescript
+npm install express
+npm install @types/express
+npm install body-parser
+tsc --init
+
+modify tsconfig.json
+"outDir": "./build",  
+
+modify package.json	 
+"scripts": {
+    "tsc": "tsc",
+    "serve": "node build/server.js",
+    "build": "npm run tsc && npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
+  
+
+
+npm install
+npm run build  
+
+APIS
+GET http://localhost:3000/todo/1
+POST http://localhost:3000/todo/
+	body: { "id": 1,"todo": "design database","status": false }
+PUT http://localhost:3000/todo/2
+    body: { "id": 1,"todo": "design database","status": true }
+DELETE http://localhost:3000/todo/2
